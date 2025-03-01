@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="final_final_design_for_urdf">
+
+  <link name="world"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.17"/>
+  </joint>
+	
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0200484598367069 -0.000298139704400114 0.00250902130095508"
+        rpy="0 0 0" />
+      <mass
+        value="0.418240339281201" />
+      <inertia
+        ixx="0.00152392071483516"
+        ixy="-1.69034343731619E-05"
+        ixz="4.82512056287363E-06"
+        iyy="0.0024468959915257"
+        iyz="-3.63309429764266E-06"
+        izz="0.00391409358969262" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/base_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hip_link">
+    <inertial>
+      <origin
+        xyz="-8.34098399076021E-06 8.8484734311341E-05 0.0310821948772011"
+        rpy="0 0 0" />
+      <mass
+        value="0.407289435418519" />
+      <inertia
+        ixx="0.000195668884544202"
+        ixy="7.60361988992469E-14"
+        ixz="-1.41656690416799E-07"
+        iyy="0.000301027626068693"
+        iyz="-5.68039287188355E-19"
+        izz="0.000215562121227264" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/hip_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/hip_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0365"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="conecting_rod_end1_link">
+    <inertial>
+      <origin
+        xyz="0.0536665115673466 0.00150000827369319 0.11289369431323"
+        rpy="0 0 0" />
+      <mass
+        value="0.0360784259450745" />
+      <inertia
+        ixx="0.00018499374773736"
+        ixy="-2.94954297245498E-15"
+        ixz="-8.75030275704407E-05"
+        iyy="0.0002274579263167"
+        iyz="-3.90204815273072E-15"
+        izz="4.25185130167117E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/conecting_rod_end1_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/conecting_rod_end1_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="conecting_rod_end1_joint"
+    type="continuous">
+    <origin
+      xyz="-0.034641 0.033165 0.07"
+      rpy="0 0 0" />
+    <parent
+      link="hip_link" />
+    <child
+      link="conecting_rod_end1_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="tringle1_link">
+    <inertial>
+      <origin
+        xyz="0.034642391103309 0.00388262489159753 -0.00470135100294977"
+        rpy="0 0 0" />
+      <mass
+        value="0.00648721688419076" />
+      <inertia
+        ixx="3.63581204010867E-07"
+        ixy="-5.69600674724233E-15"
+        ixz="1.78207128685479E-13"
+        iyy="2.21272604344383E-06"
+        iyz="-1.30023488524949E-15"
+        izz="1.90681320115414E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/tringle1_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/tringle1_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tringle1_joint"
+    type="revolute">
+    <origin
+      xyz="0.10733 0.003 0.22579"
+      rpy="0 0 0" />
+    <parent
+      link="conecting_rod_end1_link" />
+    <child
+      link="tringle1_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="conecting_rod_end2_link">
+    <inertial>
+      <origin
+        xyz="0.0655207546555713 -0.00750481602990007 -0.106451679350411"
+        rpy="0 0 0" />
+      <mass
+        value="0.0250915831816553" />
+      <inertia
+        ixx="9.89173933081932E-05"
+        ixy="-4.67374089281767E-15"
+        ixz="6.06776587655723E-05"
+        iyy="0.000136559636716461"
+        iyz="-1.51471503682651E-15"
+        izz="3.76800975819055E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/conecting_rod_end2_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/conecting_rod_end2_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="conecting_rod_end2_joint"
+    type="continuous">
+    <origin
+      xyz="0.069282 0.006 0"
+      rpy="0 0 0" />
+    <parent
+      link="tringle1_link" />
+    <child
+      link="conecting_rod_end2_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="end1_link">
+    <inertial>
+      <origin
+        xyz="-0.00889797696393846 -0.0245325933218585 -0.0479093954224806"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386864321901247" />
+      <inertia
+        ixx="2.09462046184255E-05"
+        ixy="9.55951369674066E-09"
+        ixz="-1.95275910841877E-07"
+        iyy="2.03933146098942E-05"
+        iyz="-8.21518112628997E-07"
+        izz="2.79456676673393E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/end1_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/end1_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end1_joint"
+    type="revolute">
+    <origin
+      xyz="0.13104 -0.008001 -0.2129"
+      rpy="0 0 0" />
+    <parent
+      link="conecting_rod_end2_link" />
+    <child
+      link="end1_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="connecting_rod_coupler_link">
+    <inertial>
+      <origin
+        xyz="-0.0102899498457692 -0.0113044984041332 0.0167182393567849"
+        rpy="0 0 0" />
+      <mass
+        value="0.0219008684234256" />
+      <inertia
+        ixx="6.68364490938837E-06"
+        ixy="4.15892617230921E-10"
+        ixz="3.02172527843635E-06"
+        iyy="9.76110810352771E-06"
+        iyz="-6.76487977948777E-10"
+        izz="3.63405019157178E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/connecting_rod_coupler_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/connecting_rod_coupler_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="connecting_rod_lower_arm1_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="hip_link" />
+    <child
+      link="connecting_rod_coupler_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="push_rod_lower_arm_link">
+    <inertial>
+      <origin
+        xyz="0.0534956575378697 -0.00150002391477834 0.112532087877956"
+        rpy="0 0 0" />
+      <mass
+        value="0.012503341701897" />
+      <inertia
+        ixx="5.47950826239023E-05"
+        ixy="1.8753538172674E-15"
+        ixz="-2.59174053176703E-05"
+        iyy="6.73716414800689E-05"
+        iyz="4.54102939618889E-15"
+        izz="1.25955306675845E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/push_rod_lower_arm_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/push_rod_lower_arm_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="push_rod_lower_arm_joint"
+    type="revolute">
+    <origin
+      xyz="-0.03145 0.006 0.051097"
+      rpy="0 0 0" />
+    <parent
+      link="connecting_rod_coupler_link" />
+    <child
+      link="push_rod_lower_arm_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lower_arm1_link">
+    <inertial>
+      <origin
+        xyz="0.0816069064098793 -0.00248804892734074 -0.132587853445486"
+        rpy="0 0 0" />
+      <mass
+        value="0.222499516294936" />
+      <inertia
+        ixx="0.00152724973040721"
+        ixy="-7.81115888642707E-15"
+        ixz="0.000922032326036127"
+        iyy="0.00212318768250732"
+        iyz="-5.9619375481644E-15"
+        izz="0.000596713381849867" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/lower_arm1_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/lower_arm1_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lower_arm1_joint"
+    type="revolute">
+    <origin
+      xyz="0.10733 0.005501 0.22579"
+      rpy="0 0 0" />
+    <parent
+      link="push_rod_lower_arm_link" />
+    <child
+      link="lower_arm1_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="upper_arm_link">
+    <inertial>
+      <origin
+        xyz="0.05274670062561 0.0094401118546841 0.110960301646364"
+        rpy="0 0 0" />
+      <mass
+        value="0.238842161164042" />
+      <inertia
+        ixx="0.00127763829920548"
+        ixy="7.17368715593639E-10"
+        ixz="-0.000584499557938999"
+        iyy="0.00160181140211157"
+        iyz="-3.40565377299508E-10"
+        izz="0.000325937372033606" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/upper_arm_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/upper_arm_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upper_arm_link"
+    type="revolute">
+    <origin
+      xyz="0 0 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="hip_link" />
+    <child
+      link="upper_arm_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lower_arm2_link">
+    <inertial>
+      <origin
+        xyz="0.0501570672911008 1.19510726491762E-05 -0.0814908122454023"
+        rpy="0 0 0" />
+      <mass
+        value="0.222499516294936" />
+      <inertia
+        ixx="0.00152724973040721"
+        ixy="-7.81115888631004E-15"
+        ixz="0.000922032326036127"
+        iyy="0.00212318768250732"
+        iyz="-5.96193754780358E-15"
+        izz="0.000596713381849867" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/lower_arm2_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/lower_arm2_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lower_arm2_link"
+    type="revolute">
+    <origin
+      xyz="0.10733 0.009001 0.22579"
+      rpy="0 0 0" />
+    <parent
+      link="upper_arm_link" />
+    <child
+      link="lower_arm2_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="end2_link">
+    <inertial>
+      <origin
+        xyz="0.0257430391874193 0.000630837468454602 -0.0279093954224346"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386864321901248" />
+      <inertia
+        ixx="2.09462046184255E-05"
+        ixy="9.55951369674078E-09"
+        ixz="-1.95275910841881E-07"
+        iyy="2.03933146098942E-05"
+        iyz="-8.21518112628998E-07"
+        izz="2.79456676673392E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/end2_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/end2_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end2_link"
+    type="revolute">
+    <origin
+      xyz="0.13104 0 -0.2129"
+      rpy="0 0 0" />
+    <parent
+      link="lower_arm2_link" />
+    <child
+      link="end2_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="tringle2_link">
+    <inertial>
+      <origin
+        xyz="1.37495186390557E-06 0.0310470424409514 0.0152986489970703"
+        rpy="0 0 0" />
+      <mass
+        value="0.00648721688419077" />
+      <inertia
+        ixx="3.63581204010867E-07"
+        ixy="-5.69600675200664E-15"
+        ixz="1.78207128525246E-13"
+        iyy="2.21272604344383E-06"
+        iyz="-1.3002349053817E-15"
+        izz="1.90681320115414E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/tringle2_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://final_final_design_for_urdf/meshes/tringle2_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tringle2_link"
+    type="revolute">
+    <origin
+      xyz="0.10733 0.009001 0.22579"
+      rpy="0 0 0" />
+    <parent
+      link="upper_arm_link" />
+    <child
+      link="tringle2_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  
+  <transmission name="hip_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="hip_joint">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="hip_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+ <transmission name="conecting_rod_end1_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="conecting_rod_end1_joint">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="conecting_rod_end1_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+<transmission name="tringle1_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="tringle1_joint">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="tringle1_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+ <transmission name="conecting_rod_end2_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="conecting_rod_end2_joint">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="conecting_rod_end2_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+<transmission name="end1_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="end1_joint">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="end1_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+<transmission name="connecting_rod_coupler_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="connecting_rod_lower_arm1_joint">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="connecting_rod_coupler_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+ <transmission name="push_rod_lower_arm_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="push_rod_lower_arm_joint">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="push_rod_lower_arm_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+<transmission name="lower_arm1_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="lower_arm1_joint">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="lower_arm1_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+ <transmission name="upper_arm_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="upper_arm_link">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="upper_arm_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+ <transmission name="lower_arm2_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="lower_arm2_link">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="lower_arm2_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+<transmission name="end2_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="end2_link">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="end2_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+<transmission name="tringle2_link_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="tringle2_link">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="tringle2_link_motor">
+	   <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+<gazebo>
+  <plugin name="control"
+    filename="libgazebo_ros_control.so">
+    <robotNamespace>/</robotNamespace>
+  </plugin>
+</gazebo>
+
+<gazebo reference="hip_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="conecting_rod_end1_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="tringle1_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="conecting_rod_end2_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="end1_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="connecting_rod_coupler_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="connecting_rod_coupler_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="push_rod_lower_arm_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lower_arm1_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="upper_arm_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lower_arm2_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="end2_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="tringle2_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+  
+</robot>

@@ -1,0 +1,5 @@
+controller_joint_names: ['', 'hip_joint', 'conecting_rod_end1_joint', 'tringle1_joint', 'conecting_rod_end2_joint', 'end1_joint', 'connecting_rod_lower_arm1_joint', 'push_rod_lower_arm_joint', 'lower_arm1_joint', 'upper_arm_link', 'lower_arm2_link', 'end2_link', 'tringle2_link', ]
+
+
+'hip_joint', 'conecting_rod_end1_joint', 'tringle1_joint', 'conecting_rod_end2_joint', 'end1_joint', 'connecting_rod_lower_arm1_joint', 
+'push_rod_lower_arm_joint', 'lower_arm1_joint', 'upper_arm_link', 'lower_arm2_link', 'end2_link', 'tringle2_link'

@@ -1,0 +1,43 @@
+<launch>
+    <arg name="arg_x" default="0.00" />
+    <arg name="arg_y" default="0.00" />
+    <arg name="arg_z" default="0.00" />
+    <arg name="arg_R" default="0.00" />
+    <arg name="arg_P" default="0.00" />
+    <arg name="arg_Y" default="0.00" />
+
+    <!-- Robot Description -->
+    <param name="robot_description" textfile="$(find final_final_design_for_urdf)/urdf/final_final_design_for_urdf.urdf" />
+
+    <!-- Empty Gazebo World -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+    <!-- Static Transform Publisher -->
+    <node name="tf_footprint_base" pkg="tf" executable="static_transform_publisher"
+          args="0 0 0 0 0 0 base_link base_footprint 40" />
+
+    <!-- Spawn the Robot -->
+    <node name="spawn_urdf" pkg="gazebo_ros" executable="spawn_model" 
+          args="-x $(arg arg_x) -y $(arg arg_y) -z $(arg arg_z) -Y $(arg arg_Y)
+          -param robot_description -urdf -model final_final_design_for_urdf
+          -J hip_joint 0.0
+          -J conecting_rod_end1_joint 0.0
+          -J tringle1_joint 0.0
+          -J conecting_rod_end2_joint 0.0
+          -J end1_joint 0.0
+          -J connecting_rod_lower_arm1_joint 0.0
+          -J push_rod_lower_arm_joint 0.0
+          -J lower_arm1_joint 0.0
+          -J upper_arm_link 0.0
+          -J lower_arm2_link 0.0
+          -J end2_link 0.0
+          -J tringle2_link 0.0" />
+
+    <!-- Load Controllers -->
+    <rosparam file="$(find final_final_design_for_urdf)/config/joint_trajectory_controller.yaml" command="load" />
+    <node name="controller_spawner" pkg="controller_manager" executable="spawner"
+          args="joint_state_controller robot_arm_controller hand_ee_controller" />
+
+    <!-- Robot State Publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" executable="robot_state_publisher" />
+</launch>
