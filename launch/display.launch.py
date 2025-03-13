@@ -12,7 +12,7 @@ def generate_launch_description():
     with open(urdfModelPath, 'r') as infp:
         robot_desc = infp.read()
 
-        params={'robot_description': robot_desc}
+        params = {'robot_description': robot_desc}
 
         robot_state_publisher_node = launch_ros.actions.Node(
             package='robot_state_publisher',
@@ -27,13 +27,15 @@ def generate_launch_description():
             executable='joint_state_publisher',
             name='joint_state_publisher',
             parameters=[params],
-            arguments=[urdfModelPath]
+            arguments=[urdfModelPath],
+            condition=launch.conditions.UnlessCondition(LaunchConfiguration('gui'))  # Disable the GUI
         )
+
         joint_state_publisher_gui_node = launch_ros.actions.Node(
             package='joint_state_publisher_gui',
             executable='joint_state_publisher_gui',
             name='joint_state_publisher_gui',
-            arguments=[urdfModelPath],
+            parameters=[{'use_gui': True}],  # Enable the GUI
             condition=launch.conditions.IfCondition(LaunchConfiguration('gui'))
         )
 
